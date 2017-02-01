@@ -4,7 +4,6 @@ require 'html-proofer'
 
 task :default => :test
 
-
 root_dir = File.expand_path(File.dirname(__FILE__))
 site_dir = File.join(root_dir, "_site")
 circle_config = YAML.load_file(File.join(root_dir, "circle.yml"))
@@ -23,7 +22,7 @@ end
 task :b => :build
 
 
-namespace :check do |ns|
+namespace :check do
   desc "Check spelling in compiled HTML files"
   task :spelling => :build do
     puts "Checking spelling..."
@@ -75,22 +74,4 @@ namespace :check do |ns|
     }
     HTMLProofer.check_directory("./_site", opts).run
   end
-
-  task :all do
-    exceptions = []
-    ns.tasks.each do |task|
-      begin
-        task.invoke
-      rescue Exception => e
-        exceptions << e
-      end
-    end
-    puts "--------------------------------\n\n#{exceptions.join("\n")}\n\n"
-    raise "One or more checks failed" unless exceptions.empty?
-    puts "Success"
-  end
-
 end
-
-desc "Execute tests"
-task :test => 'check:all'
