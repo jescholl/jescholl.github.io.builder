@@ -143,7 +143,6 @@ exclude:
   - README
   - tmp
   - vendor
-  - CNAME
   - custom.en.pws
 keep_files:
   - .git
