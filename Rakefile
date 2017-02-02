@@ -1,8 +1,13 @@
 require 'yaml'
 require 'tempfile'
 require 'html-proofer'
+require 'rspec/core/rake_task'
 
-task :default => :test
+RSpec::Core::RakeTask.new(:"check:rspec") do |t|
+  t.rspec_opts = "--pattern '_spec/**{,/*/**}/*_spec.rb'"
+end
+
+task :default => :build
 
 root_dir = File.expand_path(File.dirname(__FILE__))
 site_dir = File.join(root_dir, "_site")
