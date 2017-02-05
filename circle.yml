@@ -3,10 +3,6 @@ general:
     ignore:
       - gh-pages
 
-machine:
-  ruby:
-    version: 2.2.3
-
 dependencies:
   pre:
     - "sudo apt-get update"
