@@ -14,16 +14,32 @@ site_dir = File.join(root_dir, "_site")
 circle_config = YAML.load_file(File.join(root_dir, "circle.yml"))
 
 
-desc "Serve Jekyll"
-task :serve do
-  system('bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
+namespace :serve do
+  desc "Serve Jekyll"
+  task :dev do
+    system('JEKYLL_ENV=development bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
+  end
+
+  desc "Serve Jekyll - Production"
+  task :prod do
+    system('JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
+  end
 end
+task :serve => :"serve:dev"
 task :s => :serve
 
-desc "Build Jekyll"
-task :build do
-  system('bundle exec jekyll build', out: $stdout, err: $stderr)
+namespace :build do
+  desc "Build Jekyll"
+  task :dev do
+    system('JEKYLL_ENV=development bundle exec jekyll build', out: $stdout, err: $stderr)
+  end
+
+  desc "Build Jekyll - Production"
+  task :prod do
+    system('JEKYLL_ENV=production bundle exec jekyll build', out: $stdout, err: $stderr)
+  end
 end
+task :build => :"build:dev"
 task :b => :build
 
 
@@ -68,10 +84,15 @@ namespace :check do
       check_favicon: true,
       allow_hash_href: true,
       check_external_hash: true,
-#      enforce_https: true,
+      check_opengraph: true,
+      #enforce_https: true,
+      empty_alt_ignore: true,
       verbose: true,
       validation: {
         report_missing_names: true
+      },
+      cache: {
+        timeframe: "30d"
       },
       typhoeus: {
         ssl_verifypeer: false
