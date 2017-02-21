@@ -15,8 +15,9 @@ if [[ "$TARGET_REPO_BRANCH" == "$CIRCLE_BRANCH" && "$TARGET_REPO_URL" == "$CIRCL
 fi
 
 #copy compiled site to artifacts
+rm -rf _site
+bundle exec rake build:prod
 rsync -a _site/ $CIRCLE_ARTIFACTS
-
 
 #clone target repo to a temp dir to ensure no name collisions
 TMPDIR=$(mktemp -d)
