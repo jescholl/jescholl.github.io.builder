@@ -4,52 +4,53 @@ disqus_id: 20160510
 excerpt: >
   An exploration of the profitability of short selling houses.
 header:
-  teaser: portland_home_values.png
+  teaser: /images/portland_home_values.png
 
-shortsale:
-  functionplot:
-    data:
+graph:
+  shortsale:
+    chart:
+      data:
+        -
+          fn: (home_value + (mortgage - principal_per_month) * 6) - (home_value * (100 - x)/100 + home_value * realtor_commission/100 + rent * 6) + ((home_value - loan_amount) - home_value*realtor_commission/100)*(nthRoot(1+investment_apy/100, 2) - 1)
+      yAxis:
+        label: Profit
+        domain: [-50000, 100000]
+      xAxis:
+        label: "% Decrease during winter"
+        domain: [-5, 20]
+    inputs:
       -
-        fn: (home_value + (mortgage - principal_per_month) * 6) - (home_value * (100 - x)/100 + home_value * realtor_commission/100 + rent * 6) + ((home_value - loan_amount) - home_value*realtor_commission/100)*(nthRoot(1+investment_apy/100, 2) - 1)
-    yAxis:
-      label: Profit
-      domain: [-50000, 100000]
-    xAxis:
-      label: "% Decrease during winter"
-      domain: [-5, 20]
-  inputs:
-    -
-      label: Home Value
-      name: home_value
-      value: 300000
-    -
-      label: Mortgage
-      name: mortgage
-      value: 1500
-    -
-      label: Principal/Month
-      name: principal_per_month
-      value: 300
-    -
-      label: Realtor Commission %
-      name: realtor_commission
-      value: 6
-    -
-      label: Rent
-      name: rent
-      value: 1500
-    -
-      label: Loan Amount
-      name: loan_amount
-      value: 225000
-    -
-      label: Investment APY
-      name: investment_apy
-      value: 1
+        label: Home Value
+        name: home_value
+        value: 300000
+      -
+        label: Mortgage
+        name: mortgage
+        value: 1500
+      -
+        label: Principal/Month
+        name: principal_per_month
+        value: 300
+      -
+        label: Realtor Commission %
+        name: realtor_commission
+        value: 6
+      -
+        label: Rent
+        name: rent
+        value: 1500
+      -
+        label: Loan Amount
+        name: loan_amount
+        value: 225000
+      -
+        label: Investment APY
+        name: investment_apy
+        value: 1
 
 gallery:
   - url: http://www.trulia.com/real_estate/Portland-Oregon/market-trends/
-    image_path: portland_home_values.png
+    image_path: /images/portland_home_values.png
     alt: portland home values 
 
 ---
@@ -158,5 +159,5 @@ than the realtor fees, its almost impossible to come out ahead.  While there
 are ways to save money on realtor fees such as selling yourself or using an
 online listing agent, short-selling houses just doesn't seem like a practical
 way to make money to me.
-{% include graph.html graph=page.shortsale %}
+{% include graph.html graph=page.graph.shortsale %}
 

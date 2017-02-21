@@ -1,8 +1,10 @@
+{% include head/favicon.html %}
+
 <!-- start custom head snippets -->
 
-{% if (page | map: "functionplot") %}
-<script src="{{ base_path }}/assets/js/d3.v3.min.js"></script>
-<script src="{{ base_path }}/assets/js/function-plot.min.js"></script>
+{% css custom %}
+{% if page.graph %}
+  {% js graph %}
 {% endif %}
 
 <!-- end custom head snippets -->

@@ -17,7 +17,7 @@ sitemap: false
 
         <!-- You can turn off the avatar in _config.yml by setting to false -->
         {% if site.resume_avatar == 'true' %}
-          <img src="{{ site.author.avatar | prepend: "/images/" | prepend: base_path }}" alt="my photo" class="avatar" itemprop="image">
+          <img src="{{ site.author.avatar | absolute_url }}" alt="my photo" class="avatar" itemprop="image">
         {% endif %}
 
         <!-- Your name is defined in the _config.yml file -->

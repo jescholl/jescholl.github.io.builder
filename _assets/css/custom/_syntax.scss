@@ -1,0 +1,7 @@
+div.highlighter-rouge, figure.highlight {
+  &:before {
+    content: none;
+    //background-color: none;
+
+  }
+}
