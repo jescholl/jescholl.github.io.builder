@@ -1,7 +1,7 @@
 {% if include.graph %}
 
 {% capture graph_div_id %}{{ "graph" }}{% increment graph_number %}{% endcapture %}
-{% assign  graph_data = include.graph.functionplot | jsonify %}
+{% assign  graph_data = include.graph.chart | jsonify %}
 
 <div id="{{ graph_div_id }}" class="text-center"></div>
 

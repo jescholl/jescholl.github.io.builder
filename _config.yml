@@ -6,6 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+theme                    : minimal-mistakes-jekyll
 locale                   : "en-US"
 title                    : "JESCHOLL"
 title_separator          : "-"
@@ -13,7 +14,7 @@ name                     : "Jason Scholl"
 description              : "A blog about networking, computers, programming, finance, all the things that interest me."
 url                      : https://jescholl.com
 baseurl                  : # the subpath of your site, e.g. "/blog"
-gh_repo                  : https://github.com/jescholl/jescholl.github.io
+repository               : jescholl/jescholl.github.io
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -21,32 +22,31 @@ comments:
   provider               : disqus # false (default), "disqus", "facebook", "google-plus", custom"
   disqus:
     shortname            : jescholl # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
-
-
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-
-  - scope:
-      path: "_posts_hidden"
-    values:
-      hidden: true
-      sitemap: false
-
+staticman:
+  allowedFields          : ['name', 'email', 'url', 'message']
+  branch                 : "master"
+  commitMessage          : "New comment."
+  filename               : comment-{@timestamp}
+  format                 : "yml"
+  moderation             : true
+  path                   : # "/_data/comments/{options.slug}" (default)
+  requiredFields         : ['name', 'email', 'message']
+  transforms:
+    email                : "md5"
+  generatedFields:
+    date:
+      type               : "date"
+      options:
+        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+atom_feed:
+  path                   : # blank (default) uses feed.xml
 
 # SEO Related
 google_site_verification :
@@ -78,15 +78,10 @@ analytics:
   google:
     tracking_id          : "UA-77377710-1"
 
-# Google AdSense
-google_ad_client         :
-google_ad_slot           :
-
-
 # Site Author
 author:
   name             : "Jason Scholl"
-  avatar           : "bio-photo.png?v=7kkOzmnx2k"
+  avatar           : "/images/bio-photo.png?v=7kkOzmnx2k"
   bio              : "Network Engineer, Linux Administrator, Rubyist, Finance Nerd"
   location         : "Portland, OR"
   email            :
@@ -105,7 +100,7 @@ author:
   linkedin         :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
   twitter          : jescholl
@@ -120,16 +115,13 @@ include:
   - .htaccess
   - _pages
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - vendor
   - .asset-cache
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
   - Capfile
+  - circle.yml
   - CHANGELOG
   - config
   - Gemfile
@@ -142,7 +134,6 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - vendor
   - custom.en.pws
 keep_files:
   - .git
@@ -158,10 +149,6 @@ lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-sass:
-  sass_dir: _sass
-  style: compressed
-
 
 # Markdown Processing
 kramdown:
@@ -175,6 +162,12 @@ kramdown:
   enable_coderay: false
 
 
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -185,6 +178,7 @@ timezone: America/Los_Angeles
 # Plugins
 gems:
   - jekyll-paginate
+  - jekyll-assets
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
@@ -209,10 +203,10 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path/my-awesome-category/index.html ~> path: /
-categories:
+category_archive:
   type: liquid
   path: /categories/
-tags:
+tag_archive:
   type: liquid
   path: /tags/
 # https://github.com/jekyll/jekyll-archives
@@ -228,6 +222,7 @@ tags:
 #     tag: /tags/:name/
 
 
+
 # HTML Compression
 # - http://jch.penibelst.de/
 compress_html:
@@ -235,6 +230,20 @@ compress_html:
   ignore:
     envs: development
 
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
 ###################
 # resume settings #
