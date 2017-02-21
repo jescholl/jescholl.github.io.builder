@@ -2,12 +2,16 @@
 set -e
 
 if [ -z "$TARGET_REPO_URL" ]; then
-  # if TARGET_REPO_URL isn't set, attempt to remove ".builder" from this repo's url
-  TARGET_REPO_URL=${CIRCLE_REPOSITORY_URL%%.builder}
+  TARGET_REPO_URL=$CIRCLE_REPOSITORY_URL
 fi
 
 if [ -z "$TARGET_REPO_BRANCH" ]; then
   TARGET_REPO_BRANCH=master
+fi
+
+if [[ "$TARGET_REPO_BRANCH" == "$CIRCLE_BRANCH" && "$TARGET_REPO_URL" == "$CIRCLE_REPOSITORY_URL" ]]; then
+  echo "Cannot deploy to current repo and branch"
+  exit 1
 fi
 
 #copy compiled site to artifacts

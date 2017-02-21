@@ -12,7 +12,7 @@ test:
     - bundle exec rake check:html
     - bundle exec rake check:spelling
 deployment:
-  master:
-    branch: master
+  github:
+    branch: develop
     commands:
       - "_scripts/deploy.sh"
