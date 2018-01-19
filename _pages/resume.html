@@ -57,34 +57,11 @@ sitemap: false
           <div class="columns">
 
             <div class="one-fourth column">
-              <h4 class="resume-item-details">Networking</h4>
+              <h4 class="resume-item-details">Automation</h4>
               <ul class="resume-item-list">
-                <li>Network Design</li>
-                <li>HP Switches</li>
-                <li>Cisco Switches</li>
-                <li>Cisco Firewalls</li>
-                <li>Cisco Access Points</li>
-                <li>Juniper Firewalls</li>
-                <li>Amazon VPC</li>
-                <li>Amazon Direct Connect</li>
-                <li>OpenVPN</li>
-                <li>Haproxy</li>
-                <li>Nginx</li>
-                <li>Apache</li>
-              </ul>
-            </div>
-
-            <div class="one-fourth column">
-              <h4 class="resume-item-details">Programming</h4>
-              <ul class="resume-item-list">
-                <li>Ruby</li>
-                <li>Chef</li>
-                <li>BaSH</li>
-                <li>JavaScript</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Perl</li>
-                <li>PHP</li>
+                <li>CircleCi</li>
+                <li>Jenkins</li>
+                <li>Consul Service Discovery</li>
               </ul>
             </div>
 
@@ -95,36 +72,30 @@ sitemap: false
                 <li>Sumologic</li>
                 <li>Loggly</li>
                 <li>ELK</li>
-                <li>Logz.io</li>
-                <li>ServerDensity</li>
                 <li>New Relic</li>
-                <li>OpenNMS</li>
-                <li>Pingdom</li>
-                <li>Rsyslog</li>
-                <li>Graphite</li>
-                <li>Graphana</li>
-                <li>InfluxDB</li>
                 <li>Snort</li>
                 <li>Aide</li>
-                <li>Nagios</li>
-                <li>StatsD</li>
-                <li>Collectd</li>
                 <li>Observium</li>
               </ul>
             </div>
 
             <div class="one-fourth column">
-              <h4 class="resume-item-details">Datastores</h4>
+              <h4 class="resume-item-details">Networking</h4>
               <ul class="resume-item-list">
-                <li>Mysql</li>
-                <li>Postgres</li>
-                <li>Redis</li>
-                <li>Memcached</li>
-                <li>Riak</li>
-                <li>Consul</li>
-                <li>Elasticsearch</li>
-                <li>RDS</li>
-                <li>RedShift</li>
+                <li>Cisco</li>
+                <li>Juniper</li>
+                <li>Amazon VPC</li>
+                <li>Amazon Direct Connect</li>
+              </ul>
+            </div>
+
+            <div class="one-fourth column">
+              <h4 class="resume-item-details">Config Management</h4>
+              <ul class="resume-item-list">
+                <li>Terraform</li>
+                <li>Chef</li>
+                <li>Etch</li>
+                <li>Consul-Template</li>
               </ul>
             </div>
 
@@ -145,14 +116,17 @@ sitemap: false
 
         <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
           <h3 class="resume-item-title" itemprop="name"><a href="https://www.goldstar.com">Goldstar Events</a></h3>
-          <h4 class="resume-item-details" itemprop="description">Sr. Linux Administrator &bull; Sep, 2013 &mdash; Present</h4>
-          <p class="resume-item-copy">On a two person team I support 25 developers, manage ~120 physical and virtual nodes running ~10 Rails apps with Chef and <a href="https://github.com/etch/etch">Etch</a>.  I am also solely responsible for managing the network infrastructure, logging and metrics monitoring systems (Datadog and Sumologic currently, though we've tried <a href="#skills">many others</a>).  Due to the vast size difference between the ops and dev teams, a big part of my job is to empower developers through improving existing troubleshooting tools, creating new tools, or find better commercial/open source ones.</p>
+          <h4 class="resume-item-details" itemprop="description">Sr. Linux Administrator &bull; Sep, 2013 &mdash; Jan, 2018</h4>
+          <p class="resume-item-copy">On a two person team I manage ~120 physical and virtual nodes running ~10 Rails apps with Chef, <a href="https://github.com/etch/etch">Etch</a>, and Terraform.  I am also primarily responsible for managing the network infrastructure, logging and metrics monitoring systems.  Due to the small size of the ops team, a big part of my job is to empower developers through improving existing troubleshooting tools, creating new tools, or find better commercial/open source ones.</p>
           <p class="resume-item-copy">Key Achievements:</p>
           <ul class="resume-item-list">
-            <li>Work with developers to secure applications and network during move from PCI4 to PCI3.</li>
-            <li>Move all internal services to Consul to make them easier to address, monitor, load balance, and inventory.</li>
-            <li>Setup Amazon VPC and Direct Connect and begin gradual migration away from physical infrastructure.</li>
+            <li>Setup Terraform to manage Github, AWS, and PagerDuty</li>
+            <li>Automate deb and rpm package builds for multiple operating systems and architectures.</li>
+            <li>Setup Amazon VPC and Direct Connect to begin gradual migration toward Amazon's EC2, RDS, Elasticache, and Redshift.</li>
             <li>Redesign network infrastructure, and replace firewalls to improve security and throughput.</li>
+            <li>Work with developers to secure applications and network during move from PCI4 to PCI3.</li>
+            <li>Implement service discovery in Consul to ease service management and deployment.</li>
+            <li>Design infrastructure in a self-service manner, granting developers easy control of settings without requiring knowledge of the infrastructure itself.
           </ul>
         </div><!-- end of resume-item -->
 
@@ -186,6 +160,12 @@ sitemap: false
         <header class="section-header">
           <h2 id="projects">Projects</h2>
         </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title">Kubernetes</h3>
+          <h4 class="resume-item-details">Bare metal kubernetes cluster</h4>
+          <p class="resume-item-copy">There are lots of kubernetes projects out there, but the majority of them lean on various cloud services.  I was curious how kubernetes would work on bare metal, so I built a small cluster to teach myself about kubernetes and eventually power my blog and a few other home projects.
+        </div>
 
         <div class="resume-item">
           <h3 class="resume-item-title"><a href="https://github.com/jescholl/packetman">Packetman</a></h3>
