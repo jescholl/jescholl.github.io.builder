@@ -49,7 +49,7 @@ graph:
         value: 1
 
 gallery:
-  - url: http://www.trulia.com/real_estate/Portland-Oregon/market-trends/
+  - url: https://www.trulia.com/real_estate/Portland-Oregon/market-trends/
     image_path: /images/portland_home_values.png
     alt: portland home values 
 
@@ -78,7 +78,7 @@ Looking at home values over the last few years, you can clearly see a seasonal r
 higher in the summer and lower in the winter.  This gives hope that it might really
 be possible to make money by delaying buying after selling.
 
-{% include gallery caption="Portland area pricing data taken from [Trulia.com](http://www.trulia.com)" %}
+{% include gallery caption="Portland area pricing data taken from [Trulia.com](https://www.trulia.com)" %}
 
 We want the housing market to lose as much of its value as possible between selling and buying 6 months later.  To make any profit, home values must drop enough to cover selling costs, the increase in monthly housing costs, and the principal we would have put into our house during the rental period if we hadn't sold.
 
@@ -103,7 +103,7 @@ growth in my area last year was are around 20%, I'm going to use a `buy_price`
 4% less than my `sell_price` (`20% * 20% = 4%`). To help our profits a little
 more, I'll also assume `monthly_rent` and `monthly_mortgage` are equal.  Finally,
 selling a house in a reasonable amount of time usually requires a realtor, and
-[realtor commissions are usually about 6%](http://www.mortgagecalculator.biz/c/commissions.php), so we'll stick with that.
+[realtor commissions are usually about 6%](https://www.mortgagecalculator.biz/c/commissions.php), so we'll stick with that.
 
 ```ruby
 sell_price             = 300_000

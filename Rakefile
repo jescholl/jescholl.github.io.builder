@@ -85,9 +85,10 @@ namespace :check do
       allow_hash_href: true,
       check_external_hash: true,
       check_opengraph: true,
-      #enforce_https: true,
+      enforce_https: true,
       empty_alt_ignore: true,
       verbose: true,
+      url_ignore: [/www\.stockpickssystem\.com/],
       validation: {
         report_missing_names: true
       },
