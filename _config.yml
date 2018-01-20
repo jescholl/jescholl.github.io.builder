@@ -176,7 +176,7 @@ timezone: America/Los_Angeles
 
 
 # Plugins
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-assets
   - jekyll-sitemap
