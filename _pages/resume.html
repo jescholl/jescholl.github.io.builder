@@ -189,6 +189,23 @@ sitemap: false
       <!-- end Projects -->
       {% endif %}
 
+      {% if site.resume_section_associations %}
+      <!-- begin Associations -->
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2 id="associations">Associations</h2>
+        </header>
+
+        <div class="resume-item">
+          <h3 class="resume-item-title"><a href="https://www.betagammasigma.org/">Beta Gama Sigma Honors Association</a></h3>
+          <h4 class="resume-item-details">Lifetime Member &bull; 2010</h4>
+        </div>
+
+      </section>
+      <!-- end Associations -->
+      {% endif %}
+
       {% if site.resume_section_education %}
       <!-- begin Education -->
       <section class="content-section">
@@ -197,7 +214,7 @@ sitemap: false
           <h2 id="education">Education</h2>
         </header>
 
-        <div class="resume-item page-break" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
           <h3 class="resume-item-title" itemprop="name"><a href="https://www.pdx.edu">Portland State University</a></h3>
           <h4 class="resume-item-details" itemprop="description">Bachelor of Science, Business Administration &bull; 2009 &mdash; 2012</h4>
           <p class="resume-item-copy">Information Systems &bull; Cum Laude</p>
@@ -241,23 +258,6 @@ sitemap: false
 
       </section>
       <!-- end Recognition -->
-      {% endif %}
-
-      {% if site.resume_section_associations %}
-      <!-- begin Associations -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2 id="associations">Associations</h2>
-        </header>
-
-        <div class="resume-item">
-          <h3 class="resume-item-title"><a href="https://www.betagammasigma.org/">Beta Gama Sigma Honors Association</a></h3>
-          <h4 class="resume-item-details">Lifetime Member &bull; 2010</h4>
-        </div>
-
-      </section>
-      <!-- end Associations -->
       {% endif %}
 
       {% if site.resume_section_links %}
