@@ -3,60 +3,59 @@ require 'tempfile'
 require 'html-proofer'
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:"check:rspec") do |t|
+RSpec::Core::RakeTask.new(:'check:rspec') do |t|
   t.rspec_opts = "--pattern '_spec/**{,/*/**}/*_spec.rb'"
 end
 
-task :default => :build
+task default: :serve
 
 root_dir = File.expand_path(File.dirname(__FILE__))
-site_dir = File.join(root_dir, "_site")
-circle_config = YAML.load_file(File.join(root_dir, "circle.yml"))
-
+site_dir = File.join(root_dir, '_site')
 
 namespace :serve do
-  desc "Serve Jekyll"
+  desc 'Serve Jekyll'
   task :dev do
     system('JEKYLL_ENV=development bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
   end
 
-  desc "Serve Jekyll - Production"
+  desc 'Serve Jekyll - Production'
   task :prod do
     system('JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
   end
 end
-task :serve => :"serve:dev"
-task :s => :serve
+
+task serve: :'serve:dev'
+task s:     :serve
 
 namespace :build do
-  desc "Build Jekyll"
+  desc 'Build Jekyll'
   task :dev do
     system('JEKYLL_ENV=development bundle exec jekyll build', out: $stdout, err: $stderr)
   end
 
-  desc "Build Jekyll - Production"
+  desc 'Build Jekyll - Production'
   task :prod do
     system('JEKYLL_ENV=production bundle exec jekyll build', out: $stdout, err: $stderr)
   end
 end
-task :build => :"build:dev"
-task :b => :build
 
+task build: :'build:dev'
+task b:     :build
 
 namespace :check do
-  desc "Check spelling in compiled HTML files"
-  task :spelling => :build do
-    puts "Checking spelling..."
+  desc 'Check spelling in compiled HTML files'
+  task :spelling do
+    puts 'Checking spelling...'
 
     files = Dir.glob("#{site_dir}/**/*.html")
-    content = ""
+    content = ''
     files.each do |file|
       content += File.read(file)
     end
 
     # FIXME this is ugly and prone to breaking
     if `aspell -v` !~ /0\.60\.7/
-      content.gsub!("’","'")
+      content.gsub!('’',"'")
     end
 
     tfile = Tempfile.new('aspell')
@@ -77,8 +76,8 @@ namespace :check do
     end
   end
 
-  desc "Validate compiled HTML"
-  task :html => :build do
+  desc 'Validate compiled HTML'
+  task :html do
     opts = {
       check_html: true,
       check_favicon: true,
@@ -93,12 +92,21 @@ namespace :check do
         report_missing_names: true
       },
       cache: {
-        timeframe: "30d"
+        timeframe: '30d'
       },
       typhoeus: {
         ssl_verifypeer: false
       }
     }
-    HTMLProofer.check_directory("./_site", opts).run
+    HTMLProofer.check_directory('./_site', opts).run
   end
 end
+
+namespace :deploy do
+  desc 'Deploy to github'
+  task :github do
+    system("_scripts/deploy.sh", out: $stdout, err: $stderr)
+  end
+end
+
+task deploy: :'deploy:github'
