@@ -58,7 +58,7 @@ jobs:
       - *bundle
       - run:
           name: Install Prerequisites
-          command: "sudo apt-get update && sudo apt-get install aspell"
+          command: "sudo apt-get update && sudo apt-get install -y aspell"
       - run: 
           name: Check Spelling
           command: bundle exec rake check:spelling
@@ -70,8 +70,11 @@ jobs:
           at: .
       - *bundle
       - run:
+          name: Install Prerequisites
+          command: "sudo apt-get update; sudo apt-get install -y rsync"
+      - run:
           name: Avoid hosts unknown for github
-          command : mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+          command: mkdir ~/.ssh/ && echo -e "Host github.com\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
       - run:
           name: Deploy
           command: bundle exec rake deploy
