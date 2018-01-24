@@ -59,7 +59,7 @@ describe Posts do
     end
   end
 
-  describe 'valid?' do
+  describe 'front matter' do
     it 'should be valid' do
       expect(posts.valid?).to eq(true)
     end

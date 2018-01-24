@@ -31,8 +31,7 @@ jobs:
       - *save_cache
       - run:
           name: Build Site
-          # jekyll returns an incorrect error code so we need to test for failure manually
-          command: bundle exec rake build:prod && test -f _site/sitemap.xml
+          command: bundle exec rake build:prod
       - persist_to_workspace:
           root: .
           paths: ./*
@@ -49,6 +48,9 @@ jobs:
       - run:
           name: Check HTML
           command: bundle exec rake check:html
+      - run:
+          name: Rspec tests
+          command: bundle exec rake check:rspec
 
   check_spelling:
     <<: *defaults

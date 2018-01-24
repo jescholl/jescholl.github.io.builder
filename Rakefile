@@ -15,12 +15,12 @@ site_dir = File.join(root_dir, '_site')
 namespace :serve do
   desc 'Serve Jekyll'
   task :dev do
-    system('JEKYLL_ENV=development bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
+    system('JEKYLL_ENV=development bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr) || exit(1)
   end
 
   desc 'Serve Jekyll - Production'
   task :prod do
-    system('JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr)
+    system('JEKYLL_ENV=production bundle exec jekyll serve -H 0.0.0.0', out: $stdout, err: $stderr) || exit(1)
   end
 end
 
@@ -30,12 +30,12 @@ task s:     :serve
 namespace :build do
   desc 'Build Jekyll'
   task :dev do
-    system('JEKYLL_ENV=development bundle exec jekyll build', out: $stdout, err: $stderr)
+    system('JEKYLL_ENV=development bundle exec jekyll build', out: $stdout, err: $stderr) || exit(1)
   end
 
   desc 'Build Jekyll - Production'
   task :prod do
-    system('JEKYLL_ENV=production bundle exec jekyll build', out: $stdout, err: $stderr)
+    system('JEKYLL_ENV=production bundle exec jekyll build', out: $stdout, err: $stderr) || exit(1)
   end
 end
 
@@ -105,7 +105,7 @@ end
 namespace :deploy do
   desc 'Deploy to github'
   task :github do
-    system("_scripts/deploy.sh", out: $stdout, err: $stderr)
+    system("_scripts/deploy.sh", out: $stdout, err: $stderr) || exit(1)
   end
 end
 
