@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://jescholl.com/finance/short-selling-houses/</loc>
+<lastmod>2016-05-10T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://jescholl.com/general/im-in-ops/</loc>
+<lastmod>2016-07-01T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://jescholl.com/automation/using-custom-jekyll-plugins-on-github/</loc>
+<lastmod>2018-01-24T00:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>https://jescholl.com/about</loc>
+</url>
+<url>
+<loc>https://jescholl.com/archive/</loc>
+</url>
+<url>
+<loc>https://jescholl.com/categories/</loc>
+</url>
+<url>
+<loc>https://jescholl.com/</loc>
+</url>
+<url>
+<loc>https://jescholl.com/tags/</loc>
+</url>
+</urlset>
