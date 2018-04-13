@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://jescholl.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jescholl.com/" rel="alternate" type="text/html" /><updated>2018-04-12T12:14:39-07:00</updated><id>https://jescholl.com/</id><title type="html">JESCHOLL</title><subtitle>A blog about networking, computers, programming, finance, all the things that interest me.</subtitle><author><name>Jason Scholl</name></author><entry><title type="html">Custom Jekyll plugins on github-pages</title><link href="https://jescholl.com/automation/using-custom-jekyll-plugins-on-github/" rel="alternate" type="text/html" title="Custom Jekyll plugins on github-pages" /><published>2018-01-24T00:00:00-08:00</published><updated>2018-01-24T00:00:00-08:00</updated><id>https://jescholl.com/automation/using-custom-jekyll-plugins-on-github</id><content type="html" xml:base="https://jescholl.com/automation/using-custom-jekyll-plugins-on-github/">&lt;p&gt;Github-pages is fantastic, they provide free hosting for static sites, or Jekyll
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2018-04-12T21:13:13-07:00</updated><id>http://0.0.0.0:4000/</id><title type="html">JESCHOLL</title><subtitle>A blog about networking, computers, programming, finance, all the things that interest me.</subtitle><author><name>Jason Scholl</name></author><entry><title type="html">Custom Jekyll plugins on github-pages</title><link href="http://0.0.0.0:4000/automation/using-custom-jekyll-plugins-on-github/" rel="alternate" type="text/html" title="Custom Jekyll plugins on github-pages" /><published>2018-01-24T00:00:00-08:00</published><updated>2018-01-24T00:00:00-08:00</updated><id>http://0.0.0.0:4000/automation/using-custom-jekyll-plugins-on-github</id><content type="html" xml:base="http://0.0.0.0:4000/automation/using-custom-jekyll-plugins-on-github/">&lt;p&gt;Github-pages is fantastic, they provide free hosting for static sites, or Jekyll
 sites that stick to the list of &lt;a href=&quot;https://pages.github.com/versions/&quot;&gt;whitelisted gems&lt;/a&gt;.
 Traditional wisdom is that if you want to use Jekyll with plugins Github doesn’t allow,
 you need to host it on Amazon’s S3, or some other platform that isn’t as restrictive as github.&lt;/p&gt;
@@ -83,7 +83,7 @@ the output from the build step, and commits it with a link to the build on Circl
 now free to use any gems you like and Github will host it for free.&lt;/p&gt;
 
 &lt;p class=&quot;notice--info&quot;&gt;As an extra bonus you can add extra features like spell check, HTML validation, or a
-safety check to verify that you don’t accidentally add commits to the wrong branch.&lt;/p&gt;</content><author><name>Jason Scholl</name></author><category term="automation" /><summary type="html">How to use custom Jekyll plugins and still host your site on Github.</summary></entry><entry><title type="html">I’m in ops</title><link href="https://jescholl.com/general/im-in-ops/" rel="alternate" type="text/html" title="I'm in ops" /><published>2016-07-01T00:00:00-07:00</published><updated>2016-07-01T00:00:00-07:00</updated><id>https://jescholl.com/general/im-in-ops</id><content type="html" xml:base="https://jescholl.com/general/im-in-ops/">&lt;p&gt;I just got back from &lt;a href=&quot;https://www.monitorama.com&quot;&gt;Monitorama&lt;/a&gt; and was once again
+safety check to verify that you don’t accidentally add commits to the wrong branch.&lt;/p&gt;</content><author><name>Jason Scholl</name></author><category term="automation" /><summary type="html">How to use custom Jekyll plugins and still host your site on Github.</summary></entry><entry><title type="html">I’m in ops</title><link href="http://0.0.0.0:4000/general/im-in-ops/" rel="alternate" type="text/html" title="I'm in ops" /><published>2016-07-01T00:00:00-07:00</published><updated>2016-07-01T00:00:00-07:00</updated><id>http://0.0.0.0:4000/general/im-in-ops</id><content type="html" xml:base="http://0.0.0.0:4000/general/im-in-ops/">&lt;p&gt;I just got back from &lt;a href=&quot;https://www.monitorama.com&quot;&gt;Monitorama&lt;/a&gt; and was once again
 reminded how terrible job titles are in the tech field.  At each of the social
 gatherings I would set off to meet new people, and by far the most common
 introduction was “Hello my name is …, and I’m in ops”.  I did meet several Site
@@ -93,7 +93,7 @@ were “in ops”.&lt;/p&gt;
 &lt;figure class=&quot; &quot;&gt;
   
     
-      &lt;img src=&quot;https://jescholl.com/images/monitorama-2016.jpg&quot; alt=&quot;Pips and Bounce after-party at Monitorama 2016&quot; /&gt;
+      &lt;img src=&quot;http://0.0.0.0:4000/images/monitorama-2016.jpg&quot; alt=&quot;Pips and Bounce after-party at Monitorama 2016&quot; /&gt;
     
   
   
@@ -130,7 +130,7 @@ you might as well call yourself an Agile Engineer, or a Teamwork Administrator.&
 &lt;p&gt;Operations Engineer isn’t bad, but that’s only one step away from “I’m in ops”,
 and anyone outside the tech field would likely think it has something to do with
 trains.  I guess for now I’ll just have to keep telling people “I’m in ops”, at least
-until I find a better title I can steal.&lt;/p&gt;</content><author><name>Jason Scholl</name></author><category term="general" /><summary type="html">A discussion about job titles in tech and why no one likes them</summary></entry><entry><title type="html">Short Selling Houses</title><link href="https://jescholl.com/finance/short-selling-houses/" rel="alternate" type="text/html" title="Short Selling Houses" /><published>2016-05-10T00:00:00-07:00</published><updated>2016-05-10T00:00:00-07:00</updated><id>https://jescholl.com/finance/short-selling-houses</id><content type="html" xml:base="https://jescholl.com/finance/short-selling-houses/">&lt;p&gt;Since the housing market in Portland (and my neighborhood especially) is really
+until I find a better title I can steal.&lt;/p&gt;</content><author><name>Jason Scholl</name></author><category term="general" /><summary type="html">A discussion about job titles in tech and why no one likes them</summary></entry><entry><title type="html">Short Selling Houses</title><link href="http://0.0.0.0:4000/finance/short-selling-houses/" rel="alternate" type="text/html" title="Short Selling Houses" /><published>2016-05-10T00:00:00-07:00</published><updated>2016-05-10T00:00:00-07:00</updated><id>http://0.0.0.0:4000/finance/short-selling-houses</id><content type="html" xml:base="http://0.0.0.0:4000/finance/short-selling-houses/">&lt;p&gt;Since the housing market in Portland (and my neighborhood especially) is really
 hot right now I’ve been thinking a lot about home values and whether or not to sell.
 One bit of advice I heard a few years ago that I’ve always been intrigued by was the
 idea of selling your home in the summer, when home values are the highest, renting
@@ -163,7 +163,7 @@ be possible to make money by delaying buying after selling.&lt;/p&gt;
   
     
       &lt;a href=&quot;https://www.trulia.com/real_estate/Portland-Oregon/market-trends/&quot;&gt;
-        &lt;img src=&quot;https://jescholl.com/images/portland_home_values.png&quot; alt=&quot;portland home values&quot; /&gt;
+        &lt;img src=&quot;http://0.0.0.0:4000/images/portland_home_values.png&quot; alt=&quot;portland home values&quot; /&gt;
       &lt;/a&gt;
     
   
