@@ -79,24 +79,27 @@ namespace :check do
   desc 'Validate compiled HTML'
   task :html do
     opts = {
-      check_html: true,
-      check_favicon: true,
       allow_hash_href: true,
-      check_external_hash: true,
-      check_opengraph: true,
-      enforce_https: true,
-      empty_alt_ignore: true,
-      verbose: true,
-      url_ignore: [/www\.stockpickssystem\.com/],
-      validation: {
-        report_missing_names: true
-      },
+      assume_extension: true,
       cache: {
         timeframe: '30d'
       },
+      check_external_hash: true,
+      check_favicon: true,
+      check_html: true,
+      check_opengraph: true,
+      empty_alt_ignore: true,
+      enforce_https: true,
+      http_status_ignore: [ 999 ],
+      internal_domains: %w{ jescholl.com },
       typhoeus: {
         ssl_verifypeer: false
-      }
+      },
+      url_ignore: [ /www\.stockpickssystem\.com/ ],
+      validation: {
+        report_missing_names: true
+      },
+      verbose: true,
     }
     HTMLProofer.check_directory('./_site', opts).run
   end
