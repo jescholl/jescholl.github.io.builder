@@ -1,3 +1,7 @@
+.print-only {
+  display: none;
+}
+
 /* ==========================================================================
    PRINT STYLES
    ========================================================================== */
@@ -203,6 +207,10 @@
     display: none;
   }
 
+  .print-only {
+    display: inline;
+  }
+
   a.no-reformat:after {
     content: '';
   }
@@ -222,4 +230,5 @@
     display: none !important;
     height: 1px !important;
   }
+
 }
