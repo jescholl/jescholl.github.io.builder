@@ -1,5 +1,6 @@
 require 'psych'
 require 'rspec'
+require 'date'
 
 BASE_PATH = File.join(File.dirname(__FILE__), "..")
 
