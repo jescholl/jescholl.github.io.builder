@@ -43,6 +43,7 @@ task build: :'build:dev'
 task b:     :build
 
 namespace :check do
+  class SpellingError < Exception; end
   desc 'Check spelling in compiled HTML files'
   task :spelling do
     puts 'Checking spelling...'
@@ -71,9 +72,9 @@ namespace :check do
 
     wordcount = words.split("\n").length
     if wordcount > 0
-      puts "Found #{wordcount} misspelled words\n#{words}"
-      raise "Found #{wordcount} misspelled words"
+      raise SpellingError, "#{wordcount} misspelled words\n#{words}"
     end
+    puts "Hooray! No misspelled words."
   end
 
   desc 'Validate compiled HTML'
