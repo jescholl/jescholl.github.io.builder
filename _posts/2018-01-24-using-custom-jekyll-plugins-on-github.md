@@ -73,7 +73,7 @@ cd $DEPLOY_DIR
 git fetch origin
 git checkout master
 
-# configure git commiter
+# configure git committer
 git config --global user.name CI
 git config --global user.email ci@example.com
 

@@ -89,3 +89,11 @@ Terraform
 Elasticache
 AWS
 PagerDuty
+repo
+sudo
+rsync
+Gemfile
+readlink
+mktemp
+ENV
+whitelisted
