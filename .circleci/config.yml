@@ -17,9 +17,9 @@ restore_cache: &restore_cache
       - v1-bundle-{{ checksum "Gemfile.lock" }}
 
 bundle: &bundle
-  run: 
+  run:
     name: Install Gems
-    command: bundle install --path vendor/bundle
+    command: sudo gem install --default bundler && bundle install --path vendor/bundle
 
 jobs:
   build:
@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Install Prerequisites
           command: "sudo apt-get update && sudo apt-get install -y aspell"
-      - run: 
+      - run:
           name: Check Spelling
           command: bundle exec rake check:spelling
 
