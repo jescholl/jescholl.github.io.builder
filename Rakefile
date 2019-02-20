@@ -77,6 +77,18 @@ namespace :check do
     puts "Hooray! No misspelled words."
   end
 
+  desc 'New Spelling Check'
+  task :spelling_new do
+    files = Dir.glob("#{root_dir}/**/*.{html,md}")
+    files.each do |file|
+      Psych.parse_stream(file).select{ |doc| doc.is_a?(String) }
+      IO.read_line(file).each_with_index do |i, line|
+        line.split
+      end
+    end
+
+  end
+
   desc 'Validate compiled HTML'
   task :html do
     opts = {
@@ -85,7 +97,8 @@ namespace :check do
       cache: {
         timeframe: '30d'
       },
-      check_external_hash: true,
+      check_external_hash: false,
+      disable_external: true,
       check_favicon: true,
       check_html: true,
       check_opengraph: true,
