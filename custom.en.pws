@@ -63,7 +63,6 @@ ESXi
 Sumologic
 VPC
 Nagios
-Graphana
 Datastores
 Laude
 wildcard
@@ -105,3 +104,15 @@ iovation
 sensu
 rundeck
 workflow
+datacenter
+onboarding
+terragrunt
+terraform
+niftygateway
+ansible
+SRE
+DNS
+Fortigate
+QA
+grafana
+LLC
