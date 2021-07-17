@@ -3,7 +3,9 @@ version: 2.0
 defaults: &defaults
   working_directory: /tmp/project
   docker:
-    - image: circleci/ruby:2.4.3
+    - image: circleci/ruby:2.5.5
+      environment:
+        BUNDLER_VERSION: 2.2.24
 
 save_cache: &save_cache
   save_cache:
@@ -19,7 +21,7 @@ restore_cache: &restore_cache
 bundle: &bundle
   run:
     name: Install Gems
-    command: sudo gem install --default bundler && bundle install --path vendor/bundle
+    command: sudo gem uninstall bundler --force; sudo gem install bundler --force --version 2.2.24 && bundle install
 
 jobs:
   build:

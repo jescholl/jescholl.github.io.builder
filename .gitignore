@@ -4,3 +4,4 @@
 _asset_bundler_cache
 _site
 .asset-cache
+vendor

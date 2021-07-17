@@ -82,7 +82,7 @@ namespace :check do
     files = Dir.glob("#{root_dir}/**/*.{html,md}")
     files.each do |file|
       Psych.parse_stream(file).select{ |doc| doc.is_a?(String) }
-      IO.read_line(file).each_with_index do |i, line|
+      IO.readlines(file).each_with_index do |i, line|
         line.split
       end
     end
